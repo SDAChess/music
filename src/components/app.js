@@ -25,12 +25,13 @@ function App() {
     }
   }, [data])
   return (
-    <div className="bg-teal-600 h-screen text-white flex items-center">
+    <div className="bg-teal-600 h-screen text-white lg:flex md:flex-row items-center">
       <h1 className="text-center font-bold text-3xl w-full">
         En ce moment j'écoute...
         <br />
         {!data ? "Rien" : data.item.name + " de " + data.item.artists[0].name}
       </h1>
+      <img alt="albumCover" className="p-10" src={!data ? "" : data.item.album.images[0].url}/>
     </div>
   )
 }
